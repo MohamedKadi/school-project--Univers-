@@ -130,14 +130,14 @@
                     </div>
                 </div>
                 <div class="right-c">
-                    <form action="#">
-                            <input placeholder="Votre nom" type="text">
-                            <input placeholder="Votre numero de telephone" type="text">
-                            <input placeholder="Votre email" type="email" required>
-                            <textarea placeholder="Message" name="" id="" rows="5"></textarea>
+                    <form action="connect.php" method="post">
+                            <input placeholder="Votre nom & prenom" type="text" name="nom_prenom">
+                            <input placeholder="Votre numero de telephone" type="text" name="tel">
+                            <input placeholder="Votre email" type="email" name="email" required>
+                            <textarea placeholder="Message" name="message" id="" rows="5"></textarea>
                             <div class="btn">
-                            <a href="#">Submit</a>
-                        </div>
+                                <a href="connect.php">Submit</a>
+                            </div>
                     </form>
                 </div>
             </div>
