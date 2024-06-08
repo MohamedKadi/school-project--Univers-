@@ -5,8 +5,6 @@
     $email = isset($_POST['email']) ? $_POST['email'] : '';
     $message = isset($_POST['message']) ? $_POST['message'] : '';
 
-    var_dump($_POST);
-    die();
     // Check if any required field is empty
     if (empty($nom_prenom) || empty($tel) || empty($email) || empty($message)) {
         echo "Please fill in all fields.";
