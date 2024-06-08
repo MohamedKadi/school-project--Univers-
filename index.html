@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <?php require("connect.php") ?>
     <title>Univers-Phyto</title>
 </head>
 <body>
@@ -130,14 +131,18 @@
                     </div>
                 </div>
                 <div class="right-c">
-                    <form action="#">
-                            <input placeholder="Votre nom" type="text">
-                            <input placeholder="Votre numero de telephone" type="text">
-                            <input placeholder="Votre email" type="email" required>
-                            <textarea placeholder="Message" name="" id="" rows="5"></textarea>
+                    <form id="form1" action="connect.php" method="post">
+                            <input placeholder="Votre nom & prenom" type="text" name="nom_prenom">
+                            <input placeholder="Votre numero de telephone" type="text" name="tel">
+                            <p class="error tel_error"></p>
+                            <input placeholder="Votre email" type="email" name="email" required>
+                            <p class="error email_error"></p>
+                            <textarea placeholder="Message" name="message" id="" rows="5"></textarea>
+                            <p class="error message_error"></p>
                             <div class="btn">
-                            <a href="#">Submit</a>
-                        </div>
+                                <a href="#" onclick="document.getElementById('form1').submit();">Submit!</a>
+                            </div>
+                            <p class="succes"></p>
                     </form>
                 </div>
             </div>

@@ -114,7 +114,9 @@ html {
     transition: background-color ease-in-out 200ms;
     background-color: #AEED00;
 }
-
+input[type="submit"]:active {
+    background-color: red;
+  }
 /*-----------------------------------------------1st-Section*/
 
 .main-left{
@@ -268,7 +270,7 @@ html {
 
 .trwrapper {
     display: flex;
-    margin-top: 4.625rem;
+    margin: 4.625rem 0;
 }
 .left-c {
     display: flex;
@@ -316,3 +318,6 @@ form textarea {
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
+/*-----------------------------------------------4eme-Section*/
+
