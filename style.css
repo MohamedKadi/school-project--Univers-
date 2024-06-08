@@ -92,6 +92,9 @@ html {
     text-decoration: none;
     color: #343A40;
 }
+.list-items li:first-of-type a{
+    font-weight: 700;
+}
 .list-items a:hover{
     color: #38D9A9;
     text-decoration: underline;
