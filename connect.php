@@ -4,10 +4,11 @@ $nom_prenom = isset($_POST['nom_prenom']) ? $_POST['nom_prenom'] : '';
 $tel = isset($_POST['tel']) ? $_POST['tel'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $message = isset($_POST['message']) ? $_POST['message'] : '';
+$message_date = date("Y-m-d H:i:s");
 
 // Check if any required field is empty
 if (empty($nom_prenom) || empty($tel) || empty($email) || empty($message)) {
-    echo "Please fill in all fields.";
+    echo "Veuillez remplir tous les champs.";
 } else {
 
     // Establish a connection to the MySQL database
@@ -36,12 +37,12 @@ if (empty($nom_prenom) || empty($tel) || empty($email) || empty($message)) {
             $stmt->fetch();
             
             // Insert just the message linked to the existing client_id
-            $message_query = "INSERT INTO messages (client_id, message) VALUES (?, ?)";
+            $message_query = "INSERT INTO messages (client_id, message, message_date) VALUES (?, ?, ?)";
             $insert_stmt = $conn->prepare($message_query);
-            $insert_stmt->bind_param("is", $client_id, $message);
+            $insert_stmt->bind_param("iss", $client_id, $message, $message_date);
 
             if ($insert_stmt->execute()) {
-                echo "Message added successfully for the existing client.";
+                echo "Message ajouté avec succès pour le client existant.";
             } else {
                 echo "Error: " . $insert_stmt->error;
             }
@@ -58,12 +59,12 @@ if (empty($nom_prenom) || empty($tel) || empty($email) || empty($message)) {
                 $client_id = $conn->insert_id;
 
                 // Insert the message linked to the new client_id
-                $message_query = "INSERT INTO messages (client_id, message) VALUES (?, ?)";
+                $message_query = "INSERT INTO messages (client_id, message, message_date) VALUES (?, ?, ?)";
                 $message_stmt = $conn->prepare($message_query);
-                $message_stmt->bind_param("is", $client_id, $message);
+                $message_stmt->bind_param("iss", $client_id, $message, $message_date);
 
                 if ($message_stmt->execute()) {
-                    echo "New client and message added successfully.";
+                    echo "Nouveau client et message ajoutés avec succès.";
                 } else {
                     echo "Error: " . $message_stmt->error;
                 }
