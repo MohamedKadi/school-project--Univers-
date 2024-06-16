@@ -11,28 +11,13 @@
     
     <div class="wrapper">
         <div class="fullscreen-bg"></div>
-        <header class="navigation">
-            <div class="logo">
-                <h1><a href="#">Univers<span>Phyto</span></a></h1>
-            </div>
-            
-            <div class="list">
-                <ul class="list-items">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="/about-us.html">About Us</a></li>
-                </ul>
-            </div>
-            <div class="btn">
-                <a href="#contact-us">Contact Us</a>
-            </div>
-        </header>
+        <?php require_once(__DIR__ . '/header.php'); ?>
         <div class="persection">
             <h1 class="hero">Bienvenue chez <br> UNIVERS-<span>PHYTO</span> SARL</h1>
             <p class="description">Fondée en 2009 et située dans la dynamique région d'EL GUERDANE, province de TAROUDANT, UNIVERS-PHYTO SARL est à l'avant-garde de l'innovation agricole. En tant que leader dans la commercialisation de produits phytosanitaires, solutions de pompage solaire et réalisation de projets d'irrigation, nous sommes dédiés à promouvoir le développement agricole dans la région sud du Maroc.</p>
         </div>
     </div>
+    
     
     
 </body>
